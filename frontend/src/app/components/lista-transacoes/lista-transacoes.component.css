@@ -1,0 +1,30 @@
+mat-card {
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 900px;
+}
+
+mat-table {
+  width: 100%;
+}
+
+mat-header-cell, mat-cell {
+  padding: 10px;
+  text-align: left;
+}
+
+.receita {
+  color: green;
+}
+
+.despesa {
+  color: red;
+}
+
+mat-icon {
+  font-size: 20px;
+}
+
+button {
+  cursor: pointer;
+}

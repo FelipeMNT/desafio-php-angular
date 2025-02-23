@@ -1,0 +1,31 @@
+<h2 mat-dialog-title>Editar Transação</h2>
+<mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Descrição</mat-label>
+    <input matInput [(ngModel)]="transacao.descricao">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Valor</mat-label>
+    <input matInput type="number" [(ngModel)]="transacao.valor">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Categoria</mat-label>
+    <input matInput [(ngModel)]="transacao.categoria">
+  </mat-form-field>
+
+  <!-- Campo para Tipo de Transação -->
+    <mat-form-field>
+        <mat-label>Tipo de Transação</mat-label>
+        <mat-select [(ngModel)]="transacao.tipo_transacao">
+        <mat-option value="receita">Receita</mat-option>
+        <mat-option value="despesa">Despesa</mat-option>
+        </mat-select>
+    </mat-form-field>
+  
+
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button (click)="onSalvar()">Salvar</button>
+</mat-dialog-actions>

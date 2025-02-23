@@ -1,0 +1,37 @@
+<mat-card class="transacao-card">
+  <h2>Nova Transação</h2>
+  <form (ngSubmit)="salvarTransacao()">
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Descrição</mat-label>
+      <input matInput [(ngModel)]="transacao.descricao" name="descricao" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Valor</mat-label>
+      <input matInput type="number" [(ngModel)]="transacao.valor" name="valor" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Tipo de Transação</mat-label>
+      <mat-select [(ngModel)]="transacao.tipo_transacao_id" name="tipo_transacao_id" required>
+        <mat-option *ngFor="let tipo of tiposTransacao" [value]="tipo.id">{{ tipo.nome }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Categoria</mat-label>
+      <mat-select [(ngModel)]="transacao.categoria" name="categoria" required>
+        <mat-option *ngFor="let categoria of categorias" [value]="categoria">
+          {{ categoria }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Data</mat-label>
+      <input matInput type="date" [(ngModel)]="transacao.data_transacao" name="data_transacao" required>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" class="submit-btn">Salvar</button>
+  </form>
+</mat-card>
